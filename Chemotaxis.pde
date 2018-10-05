@@ -1,47 +1,46 @@
- Bacteria [] bob;//declare bacteria variables here   
+ Bacteria [] bob;
  void setup()   
  {  
  	noStroke(); 
  	background(0);  
- 	size(900, 900);
- 	bob = new Bacteria [10];
+ 	size(600, 600);
+ 	bob = new Bacteria [15];
  	for(int i = 0; i < bob.length; i++){
  		bob[i] = new Bacteria();
- 		}//initialize bacteria variables here   
+ 		}
  }   
  void draw()   
  {    
  	for(int i = 0; i < bob.length; i++){
  	bob[i].show();
- 	bob[i].walk();//move and show the bacteria   
+ 	bob[i].walk();
  }  
 }
- class Bacteria    
- {     
+ class Bacteria
+ {
  	int myX, myY, myColor;
  	Bacteria(){
- 		myX = myY = 450; 
+ 		myX = myY = 300; 
  		myColor = color((int)(Math.random()*256), (int)(Math.random()*256),(int)(Math.random()*256));
  }
  void walk(){
  	int direction = (int)(Math.random()*4);
   	if(direction == 0)
   	{
-    	myX = myX + 15; //right
+    	myX = myX + 15;
   	}
   	else if(direction == 1)
   	{
-    	myX = myX - 15; //left
+    	myX = myX - 15;
   	}
   	else if(direction == 2)
   	{
-    	myY = myY + 15; //down
+    	myY = myY + 15;
   	}
-  	else // direction must be 3
+  	else
   	{
-   	 	myY = myY - 15; //up
+   	 	myY = myY - 15;
   }
-
  }
  void show(){
  	fill(myColor);
